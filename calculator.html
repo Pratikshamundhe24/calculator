@@ -48,31 +48,52 @@
   </head>
   <body>
   <div class="calculator-container">
-    <input type="text" class="calculator-screen"/>
   <div class="button-row">
+    <input type="text" id="input" class="calculator-screen"/>
+    </div>
+    <div class="button-row">
+    <button class="cal-button" onclick="handleKeyPress('1')">1</button>
+    <button class="cal-button" onclick="handleKeyPress('2')">2</button>
+    <button class="cal-button" onclick="handleKeyPress('3')">3</button>
+    <button class="cal-button" onclick="handleKeyPress('+')">+</button>
+</div>
+<div class="button-row">
+    <button class="cal-button" onclick="handleKeyPress('4')">4</button>
+    <button class="cal-button" onclick="handleKeyPress('5')">5</button>
+    <button class="cal-button" onclick="handleKeyPress('6')">6</button>
+    <button class="cal-button" onclick="handleKeyPress('-')">-</button>
+</div>
+<div class="button-row">
+    <button class="cal-button" onclick="handleKeyPress('7')">7</button>
+    <button class="cal-button" onclick="handleKeyPress('8')">8</button>
+    <button class="cal-button" onclick="handleKeyPress('9')">9</button>
+    <button class="cal-button" onclick="handleKeyPress('*')">x</button>
+</div>
+<div class="button-row">
+    <button class="cal-button" onclick="handleKeyPress('0')">0</button>
+    <button class="cal-button" onclick="handleKeyPress('.')">.</button>
+    <button class="cal-button" onclick="handleKeyPress('=')">=</button>
+    <button class="cal-button" onclick="handleKeyPress('/')">/</button>
+</div>
+</div>
+<button onclick="clearScreen()">
 
-    <button class="cal-button">1</button>
-    <button class="cal-button">2</button>
-    <button class="cal-button">3</button>
-    <button class="cal-button">+</button>
-</div>
-<div class="button-row">
-    <button class="cal-button">4</button>
-    <button class="cal-button">5</button>
-    <button class="cal-button">6</button>
-    <button class="cal-button">-</button>
-</div>
-<div class="button-row">
-    <button class="cal-button">7</button>
-    <button class="cal-button">8</button>
-    <button class="cal-button">9</button>
-    <button class="cal-button">X</button>
-</div>
-<div class="button-row">
-    <button class="cal-button">.</button>
-    <button class="cal-button">0</button>
-    <button class="cal-button">=</button>
-    <button class="cal-button">-</button>
-</div>
-</div>
+</button>
+<script>
+    function handleKeyPress(key)
+        {
+        const inputScreen = document.getElementById('input');
+        if(key=='=')
+         inputScreen.value = eval(inputScreen.value);
+        else 
+        inputScreen.value += key;
+        }
+        function clearScreen()
+        {
+            const inputScreen = document.getElementById('input');
+            inputScreen.value = ''   
+        }
+    
+</script>
     </body>
+    </html>
